@@ -1,0 +1,14 @@
+<form (ngSubmit)="addSpecialisation()" [formGroup]="form">
+    <div class="mb-3">
+<!--       <label for="OFOCodeID" class="form-label"></label>
+      <select class="form-control"  id="OFOCodeID" formControlName="OFOCodeID" >
+        <option *ngFor="let type of specialisationList|async" [value]="type.OFOCodeID">{{type.OFOCodeID}}</option>
+      </select> -->
+      <input type="number" class="form-control" formControlName="OFOCodeID" />
+      <input type="text" class="form-control" formControlName="Description" />
+      <input type="datetime" class="form-control" formControlName="CreatedOn" />
+      <input type="number" class="form-control" formControlName="CreatedByUserID"  />
+    </div>
+    <input type="submit" value="Save" class="btn btn-primary"/>
+  </form>
+

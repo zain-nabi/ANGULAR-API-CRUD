@@ -1,0 +1,36 @@
+<table>
+    <thead>
+      <tr>
+        <th>OFOSpecializationID</th>
+        <th>OFOCodeID</th>
+        <th>Description</th>.
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of specialisationList|async">
+        <td>{{x.OFOSpecializationID}}</td>
+        <td>{{x.OFOCodeID}}</td>
+        <td>{{x.Description}}</td>
+        <td>
+          <button (click)="getSpecialisationsByID(x.OFOSpecializationID)">Edit</button>
+        
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+
+           
+
+  <form (ngSubmit)="updateSpecialisation()" [formGroup]="form">
+    <div class="mb-3">
+      <input  class="form-control" type="hidden" name="OFOSpecializationID" [(ngModel)]="specisalisationModl.OFOSpecializationID" formControlName="OFOSpecializationID">
+      <input  class="form-control" type="number" name="OFOCodeID" [(ngModel)]="specisalisationModl.OFOCodeID" formControlName="OFOCodeID"> 
+      <input  class="form-control" type="text" name="Description" [(ngModel)]="specisalisationModl.Description" formControlName="Description"> 
+      <input  class="form-control" type="datetime" name="CreatedOn" [(ngModel)]="specisalisationModl.CreatedOn" formControlName="CreatedOn"> 
+      <input  class="form-control" type="number" name="CreatedByUserID" [(ngModel)]="specisalisationModl.CreatedByUserID" formControlName="CreatedByUserID">  
+    </div>
+    <input type="submit" value="Save" class="btn btn-primary"/>
+  </form>
